@@ -10,25 +10,20 @@ import { Book } from './model/Book';
 
 export class ProductListComponent implements OnInit {
 
-  
-  _books : Book[] = [];  
+  filteredBooks: Book[] = [];
+  _books: Book[] =[];
 
   constructor( private bookService: BookService) {
     this.bookService = bookService;
    }
 
-  ngOnInit(): void {
-    this.listBooks();  
+  ngOnInit(){
+    this.bookService.listBooks().subscribe( data=>{
+      this._books = data;
+      console.log(this._books);
+    });
   }
 
-  listBooks():void {
-    this.bookService.listBooks().subscribe({
-      next: books => {
-        this._books = books;
-      },
-      error: err  => console.log('Erro: ', err),
-    })
-
-  }
+  
       
 }

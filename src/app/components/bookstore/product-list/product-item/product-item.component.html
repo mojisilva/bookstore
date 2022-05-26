@@ -1,1 +1,15 @@
-<p>product-item works!</p>
+<div class="card shadow-sm">
+    <img class="bd-placeholder-img card-img-top" width="100%" src='{{ "assets/images/" + book.imgUrl + ".jpg"}}'>
+    <div class="card-body">
+        <p class="card-text"> {{book.name}} </p>
+        <p class="card-text"> {{book.category}} </p>
+        <p class="card-text"> {{book.price | currency:'BRL'}} </p>
+        <p class="card-text"> {{book.quantity}} </p>
+        <p class="card-text"> {{book.imgUrl}} </p>
+    <div class="btn-group">
+        <button class="btn btn-sm btn-sucess">Comprar</button>
+        <button class="btn btn-sm btn-primary">Informações</button>
+    </div>
+    </div>
+
+</div>
